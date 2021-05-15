@@ -23,9 +23,10 @@ def main():
         [
           sg.Text("x,y"),
           sg.Input(size=(10, 1), key="coordOne"),
-          sg.Button("Confirm First"),
+          sg.Text("x,y"),
           sg.Input(size=(10, 1), key="coordTwo"),
-          sg.Button("Confirm Second"),
+          sg.Text("Scale/pixel"),
+          sg.Input(size=(10,1), key="scale"),
             [
               sg.Text("Image File"),
               sg.Input(size=(25, 1), key="-FILE-"),
@@ -52,12 +53,12 @@ def main():
               image.save(bio, format="PNG")
               window["-IMAGE-"].update(data=bio.getvalue())
               print("Processing...")
-
               img = imageio.imread(filename) # 512x1024x3 array
-              topo_map = Map(img, 10, 2)
+              topo_map = Map(img, 100, 2)
               secondOne = False
-              
+
               path = find_path(topo_map, Point(c1[0], c1[1]), Point(c2[0], c2[1])) 
+              dist = len(path) # multiply
               an_array = np.array(path)
               plt.imshow(an_array)
               plt.show()
