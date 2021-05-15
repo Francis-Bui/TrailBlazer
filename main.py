@@ -56,7 +56,7 @@ def main():
               img = imageio.imread(filename) # 512x1024x3 array
               topo_map = Map(img, 10, 2)
               secondOne = False
-    
+              
               path = find_path(topo_map, Point(c1[0], c1[1]), Point(c2[0], c2[1])) 
               an_array = np.array(path)
               plt.imshow(an_array)
