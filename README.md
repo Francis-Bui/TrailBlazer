@@ -13,7 +13,7 @@ GUI
 Generated Path
 
 
-Methedology:
+Methodology:
 
 The image representing the topographic map of the desired location is first scanned. From this scanning, we are able to access each pixel’s RGB values. 
 Now, by convention, the color red represents high elevation. Thus, we’ve implemented a preferential system that gives maximum preference to the color red. 
